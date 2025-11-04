@@ -42,7 +42,7 @@ spec:
             readOnlyRootFilesystem: true
             runAsNonRoot: true
             runAsUser: 1000
-          image: "ghcr.io/stacklok/toolhive/operator:v0.2.17"
+          image: "replaced-by-kustomize"
           imagePullPolicy: IfNotPresent
           args:
           - --leader-elect
@@ -61,10 +61,14 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.namespace
+          - name: TOOLHIVE_USE_CONFIGMAP
+            value: "true"
           - name: ENABLE_EXPERIMENTAL_FEATURES
             value: "false"
           - name: TOOLHIVE_RUNNER_IMAGE
-            value: "ghcr.io/stacklok/toolhive/proxyrunner:v0.2.17"
+            value: "replaced-by-kustomize"
+          - name: TOOLHIVE_REGISTRY_API_IMAGE
+            value: "replaced-by-kustomize"
           - name: TOOLHIVE_PROXY_HOST
             value: "0.0.0.0"
           livenessProbe:
