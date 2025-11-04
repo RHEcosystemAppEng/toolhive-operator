@@ -3,3 +3,15 @@
   value:
     name: OPERATOR_OPENSHIFT
     value: "true"
+
+- op: add
+  path: /spec/template/spec/containers/0/env/-
+  value:
+    name: GOMEMLIMIT
+    value: "300MiB"
+
+- op: add
+  path: /spec/template/spec/containers/0/env/-
+  value:
+    name: GOGC
+    value: "75"
