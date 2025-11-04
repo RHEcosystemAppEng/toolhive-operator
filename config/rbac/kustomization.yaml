@@ -18,3 +18,7 @@ resources:
 - metrics_auth_role.yaml
 - metrics_auth_role_binding.yaml
 - metrics_reader_role.yaml
+# The following RBAC configurations are used for the registry-api.
+- registry-api-clusterrole.yaml
+- registry-api-clusterrolebinding.yaml
+- registry-api-serviceaccount.yaml
